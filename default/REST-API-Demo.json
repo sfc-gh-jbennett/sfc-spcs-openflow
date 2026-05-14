@@ -23,7 +23,7 @@
         "name" : "Transform Records",
         "type" : "PROCESSOR"
       },
-      "flowFileExpiration" : "0 sec",
+      "flowFileExpiration" : "1 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "09d5ee0e-dc49-3369-9539-b1bfacdbfa8f",
       "labelIndex" : 1,
