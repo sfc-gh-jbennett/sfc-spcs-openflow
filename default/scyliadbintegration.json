@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1781306678867,
+    "description" : "",
+    "identifier" : "scyliadbintegration",
+    "lastModifiedTimestamp" : 1781306678867,
+    "name" : "scyliadb_integration",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
