@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1781306580395,
     "description" : "",
@@ -7,5 +8,1431 @@
     "name" : "zendesk_integration",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e7aef8ed-7684-36c2-95a3-f5ba439cd056",
+        "name" : "Route: Organizations",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "070df70e-af80-39eb-ac95-193721f68992",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "f671cef5-4049-34eb-bc9b-63e026c5cec1",
+        "name" : "Get Organizations",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0341b9ac-0e7b-39ac-9450-55485dce991d",
+        "name" : "Publish to Snowflake",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "23b0c756-6801-3109-8d55-606132ec4641",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e7aef8ed-7684-36c2-95a3-f5ba439cd056",
+        "name" : "Route: Organizations",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e1495519-8792-3179-93f6-832e7f92d638",
+        "name" : "Route: Tickets",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7758b6b4-c999-323d-8067-0e40ffa0a0ac",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e8c60b27-2648-31af-a804-a351d6dd3e2b",
+        "name" : "Get Tickets",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0341b9ac-0e7b-39ac-9450-55485dce991d",
+        "name" : "Publish to Snowflake",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "8d70d589-d1ba-3b45-ba4b-d0a408f2d9c1",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e1495519-8792-3179-93f6-832e7f92d638",
+        "name" : "Route: Tickets",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "127f67a3-eb65-3949-0000-00001e35b532",
+        "name" : "Route: Articles",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "9be9ece8-72f8-3331-91e2-35cdff36d5c2",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "fbfc6201-3375-3e1d-90a6-b9ba30398670",
+        "name" : "Get Articles",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 1
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0341b9ac-0e7b-39ac-9450-55485dce991d",
+        "name" : "Publish to Snowflake",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "acd71693-dea8-3eab-8d9b-eded83b46c6b",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7e35d367-fda0-3abc-a12b-6a6a12162bab",
+        "name" : "Route: Users",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0341b9ac-0e7b-39ac-9450-55485dce991d",
+        "name" : "Publish to Snowflake",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d9542019-6a08-37e2-b808-d52e8a57c440",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "127f67a3-eb65-3949-0000-00001e35b532",
+        "name" : "Route: Articles",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 2
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7e35d367-fda0-3abc-a12b-6a6a12162bab",
+        "name" : "Route: Users",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "da331e56-32f9-3a2f-9f14-5f97154baf20",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "cf808d3f-6b67-39b8-89e8-17894c6d5675",
+        "name" : "Get Users",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-record-serialization-services-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2026.5.5.17"
+        },
+        "type" : "org.apache.nifi.serialization.RecordReaderFactory"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "87f9f9b9-9052-3e3e-a65e-4a2ffcca2a1a",
+      "name" : "JSON Reader",
+      "properties" : {
+        "Schema Text" : "${avro.schema}",
+        "Max String Length" : "20 MB",
+        "Starting Field Strategy" : "ROOT_NODE",
+        "Schema Access Strategy" : "infer-schema",
+        "Schema Name" : "${schema.name}",
+        "Schema Application Strategy" : "SELECTED_PART",
+        "Allow Comments" : "false"
+      },
+      "propertyDescriptors" : {
+        "Schema Branch" : {
+          "displayName" : "Schema Branch",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema Branch",
+          "sensitive" : false
+        },
+        "Schema Reference Reader" : {
+          "displayName" : "Schema Reference Reader",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Schema Reference Reader",
+          "sensitive" : false
+        },
+        "Schema Text" : {
+          "displayName" : "Schema Text",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema Text",
+          "sensitive" : false
+        },
+        "Starting Field Name" : {
+          "displayName" : "Starting Field Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Starting Field Name",
+          "sensitive" : false
+        },
+        "Max String Length" : {
+          "displayName" : "Max String Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "Schema Inference Cache" : {
+          "displayName" : "Schema Inference Cache",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Schema Inference Cache",
+          "sensitive" : false
+        },
+        "Starting Field Strategy" : {
+          "displayName" : "Starting Field Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Starting Field Strategy",
+          "sensitive" : false
+        },
+        "Schema Registry" : {
+          "displayName" : "Schema Registry",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Schema Registry",
+          "sensitive" : false
+        },
+        "Schema Access Strategy" : {
+          "displayName" : "Schema Access Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema Access Strategy",
+          "sensitive" : false
+        },
+        "Schema Name" : {
+          "displayName" : "Schema Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema Name",
+          "sensitive" : false
+        },
+        "Timestamp Format" : {
+          "displayName" : "Timestamp Format",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Timestamp Format",
+          "sensitive" : false
+        },
+        "Date Format" : {
+          "displayName" : "Date Format",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Date Format",
+          "sensitive" : false
+        },
+        "Schema Application Strategy" : {
+          "displayName" : "Schema Application Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema Application Strategy",
+          "sensitive" : false
+        },
+        "Schema Version" : {
+          "displayName" : "Schema Version",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema Version",
+          "sensitive" : false
+        },
+        "Time Format" : {
+          "displayName" : "Time Format",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Time Format",
+          "sensitive" : false
+        },
+        "Allow Comments" : {
+          "displayName" : "Allow Comments",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Allow Comments",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.json.JsonTreeReader"
+    }, {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-web-client-provider-service-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2026.5.5.17"
+        },
+        "type" : "org.apache.nifi.web.client.provider.api.WebClientServiceProvider"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d904d4f2-baab-34d2-b046-933b9c4df839",
+      "name" : "Web Client Service",
+      "properties" : {
+        "Connect Timeout" : "10 secs",
+        "Write Timeout" : "10 secs",
+        "Redirect Handling Strategy" : "FOLLOWED",
+        "HTTP Protocol Version" : "HTTP_2",
+        "Read Timeout" : "10 secs"
+      },
+      "propertyDescriptors" : {
+        "Connect Timeout" : {
+          "displayName" : "Connect Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connect Timeout",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Write Timeout" : {
+          "displayName" : "Write Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Write Timeout",
+          "sensitive" : false
+        },
+        "Redirect Handling Strategy" : {
+          "displayName" : "Redirect Handling Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Redirect Handling Strategy",
+          "sensitive" : false
+        },
+        "HTTP Protocol Version" : {
+          "displayName" : "HTTP Protocol Version",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "HTTP Protocol Version",
+          "sensitive" : false
+        },
+        "Read Timeout" : {
+          "displayName" : "Read Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Read Timeout",
+          "sensitive" : false
+        },
+        "Proxy Configuration Service" : {
+          "displayName" : "Proxy Configuration Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Proxy Configuration Service",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.web.client.provider.service.StandardWebClientServiceProvider"
+    } ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 80.0,
+      "identifier" : "6733b430-2163-35fa-b1ee-b064dfa3e00b",
+      "label" : "NOTE: GetZendesk uses internal cursor/state tracking. Query Start Timestamp is the initial seed only. After first run, processors track incrementally. Schedule: every 6 hours.",
+      "position" : {
+        "x" : 200.0,
+        "y" : 20.0
+      },
+      "style" : {
+        "background-color" : "#FFFFCC"
+      },
+      "width" : 550.0,
+      "zIndex" : 0
+    } ],
+    "maxConcurrentTasks" : 1,
+    "name" : "Zendesk Ingestion",
+    "outputPorts" : [ ],
+    "parameterContextName" : "Zendesk Parameters",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "empty", "failure", "invalid", "success" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-snowpipe-streaming-2-processors-nar",
+        "group" : "com.snowflake.openflow.runtime",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "0341b9ac-0e7b-39ac-9450-55485dce991d",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Publish to Snowflake",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 600.0,
+        "y" : 600.0
+      },
+      "properties" : {
+        "Table" : "${sf.table.name}",
+        "Transfer Strategy" : "MANAGED",
+        "File Fragment Size" : "64 MB",
+        "Offset Tracking Timeout" : "90 s",
+        "Channel Group" : "SHARED",
+        "Schema" : "#{snowflake.schema}",
+        "Offset Tracking Resolution" : "DISABLED",
+        "Authentication Strategy" : "SNOWFLAKE_MANAGED",
+        "Database" : "#{snowflake.database}",
+        "File Fragment Count" : "4",
+        "Channel Insert Timeout" : "30 s",
+        "Destination Type" : "TABLE",
+        "Web Client Service Provider" : "d904d4f2-baab-34d2-b046-933b9c4df839"
+      },
+      "propertyDescriptors" : {
+        "Account" : {
+          "displayName" : "Account",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Account",
+          "sensitive" : false
+        },
+        "Offset Token Start Expression" : {
+          "displayName" : "Offset Token Start Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Offset Token Start Expression",
+          "sensitive" : false
+        },
+        "User" : {
+          "displayName" : "User",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "User",
+          "sensitive" : false
+        },
+        "Table" : {
+          "displayName" : "Table",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Table",
+          "sensitive" : false
+        },
+        "Transfer Strategy" : {
+          "displayName" : "Transfer Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Transfer Strategy",
+          "sensitive" : false
+        },
+        "File Fragment Size" : {
+          "displayName" : "File Fragment Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Fragment Size",
+          "sensitive" : false
+        },
+        "Offset Tracking Timeout" : {
+          "displayName" : "Offset Tracking Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Offset Tracking Timeout",
+          "sensitive" : false
+        },
+        "Channel Group" : {
+          "displayName" : "Channel Group",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Channel Group",
+          "sensitive" : false
+        },
+        "Schema" : {
+          "displayName" : "Schema",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema",
+          "sensitive" : false
+        },
+        "Pipe" : {
+          "displayName" : "Pipe",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Pipe",
+          "sensitive" : false
+        },
+        "Offset Tracking Resolution" : {
+          "displayName" : "Offset Tracking Resolution",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Offset Tracking Resolution",
+          "sensitive" : false
+        },
+        "Private Key Service" : {
+          "displayName" : "Private Key Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Private Key Service",
+          "sensitive" : false
+        },
+        "Offset Token Record Pointer" : {
+          "displayName" : "Offset Token Record Pointer",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Offset Token Record Pointer",
+          "sensitive" : false
+        },
+        "Role" : {
+          "displayName" : "Role",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Role",
+          "sensitive" : false
+        },
+        "Authentication Strategy" : {
+          "displayName" : "Authentication Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Strategy",
+          "sensitive" : false
+        },
+        "Offset Token End Expression" : {
+          "displayName" : "Offset Token End Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Offset Token End Expression",
+          "sensitive" : false
+        },
+        "Database" : {
+          "displayName" : "Database",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database",
+          "sensitive" : false
+        },
+        "File Fragment Count" : {
+          "displayName" : "File Fragment Count",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Fragment Count",
+          "sensitive" : false
+        },
+        "Channel Insert Timeout" : {
+          "displayName" : "Channel Insert Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Channel Insert Timeout",
+          "sensitive" : false
+        },
+        "Destination Type" : {
+          "displayName" : "Destination Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Destination Type",
+          "sensitive" : false
+        },
+        "Web Client Service Provider" : {
+          "displayName" : "Web Client Service Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Web Client Service Provider",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "com.snowflake.openflow.runtime.processors.snowpipe.streaming.PublishSnowpipeStreaming",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "127f67a3-eb65-3949-0000-00001e35b532",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Route: Articles",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1480.0,
+        "y" : 400.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "Cache Value Lookup Cache Size" : "100",
+        "sf.table.name" : "ZENDESK_ARTICLES"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "sf.table.name" : {
+          "displayName" : "sf.table.name",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "sf.table.name",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7e35d367-fda0-3abc-a12b-6a6a12162bab",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Route: Users",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 600.0,
+        "y" : 400.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "Cache Value Lookup Cache Size" : "100",
+        "sf.table.name" : "ZENDESK_USERS"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "sf.table.name" : {
+          "displayName" : "sf.table.name",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "sf.table.name",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-zendesk-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "cf808d3f-6b67-39b8-89e8-17894c6d5675",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Get Users",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 600.0,
+        "y" : 200.0
+      },
+      "properties" : {
+        "Authentication Credential" : "#{zendesk.token}",
+        "User Name" : "#{zendesk.user}",
+        "Resource" : "/api/v2/incremental/users",
+        "Authentication Type" : "token",
+        "Subdomain Name" : "#{zendesk.subdomain}",
+        "Export Method" : "cursor",
+        "Web Client Service Provider" : "d904d4f2-baab-34d2-b046-933b9c4df839",
+        "Query Start Timestamp" : "1781092745"
+      },
+      "propertyDescriptors" : {
+        "Authentication Credential" : {
+          "displayName" : "Authentication Credential",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Credential",
+          "sensitive" : true
+        },
+        "User Name" : {
+          "displayName" : "User Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "User Name",
+          "sensitive" : false
+        },
+        "Resource" : {
+          "displayName" : "Resource",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Resource",
+          "sensitive" : false
+        },
+        "Authentication Type" : {
+          "displayName" : "Authentication Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Type",
+          "sensitive" : false
+        },
+        "Subdomain Name" : {
+          "displayName" : "Subdomain Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Subdomain Name",
+          "sensitive" : false
+        },
+        "Export Method" : {
+          "displayName" : "Export Method",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Export Method",
+          "sensitive" : false
+        },
+        "Web Client Service Provider" : {
+          "displayName" : "Web Client Service Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Web Client Service Provider",
+          "sensitive" : false
+        },
+        "Query Start Timestamp" : {
+          "displayName" : "Query Start Timestamp",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Query Start Timestamp",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "6 hr",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.zendesk.GetZendesk",
+      "yieldDuration" : "20 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e1495519-8792-3179-93f6-832e7f92d638",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Route: Tickets",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 200.0,
+        "y" : 400.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "Cache Value Lookup Cache Size" : "100",
+        "sf.table.name" : "ZENDESK_TICKETS"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "sf.table.name" : {
+          "displayName" : "sf.table.name",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "sf.table.name",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e7aef8ed-7684-36c2-95a3-f5ba439cd056",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Route: Organizations",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1000.0,
+        "y" : 400.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "Cache Value Lookup Cache Size" : "100",
+        "sf.table.name" : "ZENDESK_ORGANIZATIONS"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "sf.table.name" : {
+          "displayName" : "sf.table.name",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "sf.table.name",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-zendesk-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e8c60b27-2648-31af-a804-a351d6dd3e2b",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Get Tickets",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 200.0,
+        "y" : 200.0
+      },
+      "properties" : {
+        "Authentication Credential" : "#{zendesk.token}",
+        "User Name" : "#{zendesk.user}",
+        "Resource" : "/api/v2/incremental/tickets",
+        "Authentication Type" : "token",
+        "Subdomain Name" : "#{zendesk.subdomain}",
+        "Export Method" : "cursor",
+        "Web Client Service Provider" : "d904d4f2-baab-34d2-b046-933b9c4df839",
+        "Query Start Timestamp" : "1781092745"
+      },
+      "propertyDescriptors" : {
+        "Authentication Credential" : {
+          "displayName" : "Authentication Credential",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Credential",
+          "sensitive" : true
+        },
+        "User Name" : {
+          "displayName" : "User Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "User Name",
+          "sensitive" : false
+        },
+        "Resource" : {
+          "displayName" : "Resource",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Resource",
+          "sensitive" : false
+        },
+        "Authentication Type" : {
+          "displayName" : "Authentication Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Type",
+          "sensitive" : false
+        },
+        "Subdomain Name" : {
+          "displayName" : "Subdomain Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Subdomain Name",
+          "sensitive" : false
+        },
+        "Export Method" : {
+          "displayName" : "Export Method",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Export Method",
+          "sensitive" : false
+        },
+        "Web Client Service Provider" : {
+          "displayName" : "Web Client Service Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Web Client Service Provider",
+          "sensitive" : false
+        },
+        "Query Start Timestamp" : {
+          "displayName" : "Query Start Timestamp",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Query Start Timestamp",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "6 hr",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.zendesk.GetZendesk",
+      "yieldDuration" : "20 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-zendesk-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "f671cef5-4049-34eb-bc9b-63e026c5cec1",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Get Organizations",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1000.0,
+        "y" : 200.0
+      },
+      "properties" : {
+        "Authentication Credential" : "#{zendesk.token}",
+        "User Name" : "#{zendesk.user}",
+        "Resource" : "/api/v2/incremental/organizations",
+        "Authentication Type" : "token",
+        "Subdomain Name" : "#{zendesk.subdomain}",
+        "Export Method" : "time",
+        "Web Client Service Provider" : "d904d4f2-baab-34d2-b046-933b9c4df839",
+        "Query Start Timestamp" : "1781092745"
+      },
+      "propertyDescriptors" : {
+        "Authentication Credential" : {
+          "displayName" : "Authentication Credential",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Credential",
+          "sensitive" : true
+        },
+        "User Name" : {
+          "displayName" : "User Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "User Name",
+          "sensitive" : false
+        },
+        "Resource" : {
+          "displayName" : "Resource",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Resource",
+          "sensitive" : false
+        },
+        "Authentication Type" : {
+          "displayName" : "Authentication Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Type",
+          "sensitive" : false
+        },
+        "Subdomain Name" : {
+          "displayName" : "Subdomain Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Subdomain Name",
+          "sensitive" : false
+        },
+        "Export Method" : {
+          "displayName" : "Export Method",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Export Method",
+          "sensitive" : false
+        },
+        "Web Client Service Provider" : {
+          "displayName" : "Web Client Service Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Web Client Service Provider",
+          "sensitive" : false
+        },
+        "Query Start Timestamp" : {
+          "displayName" : "Query Start Timestamp",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Query Start Timestamp",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "6 hr",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.zendesk.GetZendesk",
+      "yieldDuration" : "20 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-zendesk-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2026.5.5.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "fbfc6201-3375-3e1d-90a6-b9ba30398670",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Get Articles",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1472.0,
+        "y" : 200.0
+      },
+      "properties" : {
+        "Authentication Credential" : "#{zendesk.token}",
+        "User Name" : "#{zendesk.user}",
+        "Resource" : "/api/v2/help_center/incremental/articles",
+        "Authentication Type" : "token",
+        "Subdomain Name" : "#{zendesk.subdomain}",
+        "Export Method" : "time",
+        "Web Client Service Provider" : "d904d4f2-baab-34d2-b046-933b9c4df839",
+        "Query Start Timestamp" : "1781092745"
+      },
+      "propertyDescriptors" : {
+        "Authentication Credential" : {
+          "displayName" : "Authentication Credential",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Credential",
+          "sensitive" : true
+        },
+        "User Name" : {
+          "displayName" : "User Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "User Name",
+          "sensitive" : false
+        },
+        "Resource" : {
+          "displayName" : "Resource",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Resource",
+          "sensitive" : false
+        },
+        "Authentication Type" : {
+          "displayName" : "Authentication Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Type",
+          "sensitive" : false
+        },
+        "Subdomain Name" : {
+          "displayName" : "Subdomain Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Subdomain Name",
+          "sensitive" : false
+        },
+        "Export Method" : {
+          "displayName" : "Export Method",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Export Method",
+          "sensitive" : false
+        },
+        "Web Client Service Provider" : {
+          "displayName" : "Web Client Service Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Web Client Service Provider",
+          "sensitive" : false
+        },
+        "Query Start Timestamp" : {
+          "displayName" : "Query Start Timestamp",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Query Start Timestamp",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "6 hr",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.zendesk.GetZendesk",
+      "yieldDuration" : "20 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "Zendesk Parameters" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "description" : "Parameters for Zendesk Incremental Ingestion",
+      "inheritedParameterContexts" : [ ],
+      "name" : "Zendesk Parameters",
+      "parameters" : [ {
+        "description" : "Target Snowflake database",
+        "name" : "snowflake.database",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "OPENFLOW"
+      }, {
+        "description" : "Target Snowflake schema",
+        "name" : "snowflake.schema",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "ZENDESK"
+      }, {
+        "description" : "Zendesk subdomain (the xxx in xxx.zendesk.com)",
+        "name" : "zendesk.subdomain",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "CHANGE_ME"
+      }, {
+        "description" : "Zendesk API token",
+        "name" : "zendesk.token",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "Zendesk login email (e.g., user@example.com/token for API token auth)",
+        "name" : "zendesk.user",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "CHANGE_ME"
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "JBENNETT",
+    "flowIdentifier" : "zendeskintegration",
+    "timestamp" : 1781306581123
+  }
 }
