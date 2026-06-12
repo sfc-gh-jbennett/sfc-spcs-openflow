@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1781306738792,
+    "description" : "",
+    "identifier" : "mysqlbatch",
+    "lastModifiedTimestamp" : 1781306738792,
+    "name" : "mysql_batch",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
